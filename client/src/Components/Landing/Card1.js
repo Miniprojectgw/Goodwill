@@ -6,7 +6,7 @@ const Card = ({title,des}) => {
 
 <div class="flex flex-col mt-40 mb-40 hover:scale-105 hover:shadow-lg transition duration-300 justify-between w-200 h-full bg-white border border-gray-200 rounded-lg shadow ">
     <a href="#">
-        <img class="h-52 max-w-xl rounded-lg" src="https://img.freepik.com/premium-vector/online-business-agreement-deal-with-sponsor-close-project-contract-investor-manager-remote-handshake-new-start-up-digital-sponsorship-decent-vector-concept_53562-20689.jpg" alt="" />
+        <img class="h-52  rounded-lg" src="https://img.freepik.com/premium-vector/online-business-agreement-deal-with-sponsor-close-project-contract-investor-manager-remote-handshake-new-start-up-digital-sponsorship-decent-vector-concept_53562-20689.jpg" alt="" />
     </a>
     <div class="p-5">
         <a href="#">

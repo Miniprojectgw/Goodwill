@@ -1,4 +1,9 @@
-// import React, { useState } from 'react';
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+// import io from 'socket.io-client';
 
 // const PostForm = ({ onSubmit }) => {
 //   const [content, setContent] = useState('');
@@ -12,7 +17,7 @@
 //   };
 
 //   return (
-//     <form onSubmit={handleSubmit} className="mb-4">
+//     <div className="mb-4   mr-8">
 //       <textarea
 //         className="w-full px-3 py-2 border rounded-md resize-none"
 //         rows={4}
@@ -23,22 +28,78 @@
 //       <button
 //         type="submit"
 //         className="px-4 py-2 mt-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600"
+//         onClick={handleSubmit}
 //       >
 //         Post
 //       </button>
-//     </form>
+//     </div>
 //   );
 // };
 
-// const PostList = ({ posts }) => {
+
+
+
+
+
+
+
+
+
+
+// const ProfileInfo = () => {
+//   const [userData, setUserData] = useState(null);
+//   const userId = Number(sessionStorage.getItem('userId')); // Convert to a number
+
+//   useEffect(() => {
+//     const fetchUserData = async () => {
+//       try {
+//         const response = await axios.get(`http://localhost:5000/login`);
+//         const data = response.data;
+
+//         // Set the user data in the state
+//         setUserData(data);
+//       } catch (error) {
+//         console.error('Error fetching user data:', error);
+//       }
+//     };
+
+//     // Call the fetchUserData function
+//     fetchUserData();
+//   }, []);
+
+//   if (!userData) {
+//     return <div>Loading profile information...</div>;
+//   }
+
+//   // Find the user with matching ID in the userData
+//   const user = userData.find((item) => item.id === userId);
+
+//   if (!user) {
+//     return <div>User not found.</div>;
+//   }
+
 //   return (
 //     <div>
-//       {posts.map((post, index) => (
-//         <div
-//           key={index}
-//           className="p-4 mb-4 border rounded-md"
-//         >
-//           <p className="mb-2">{post}</p>
+//       <div className="bg-blue-950  p-10 mr-8 mb-4 rounded-3xl" key={user.id}>
+//         <h2 className="text-4xl text-white font-semibold mb-4">Profile</h2>
+//         <p className='text-gray-400 text-2xl'> {user.firstName} {user.lastName}</p>
+//         <p className='text-gray-400  text-2xl'>{user.email}</p>
+//       </div>
+//     </div>
+//   );
+// };
+
+
+
+
+// const PostList = ({ posts }) => {
+//   const reversedPosts = [...posts].reverse();
+
+//   return (
+//     <div>
+//       {reversedPosts.map((post) => (
+//         <div key={post.id} className="p-4 mb-4 border rounded-md">
+//           <p className="mb-2">{post.description}</p>
 //           <hr className="my-2" />
 //         </div>
 //       ))}
@@ -49,22 +110,66 @@
 // const HomePage = () => {
 //   const [posts, setPosts] = useState([]);
 
+//   useEffect(() => {
+//     // Fetch posts data from the backend
+//     axios
+//       .get('http://localhost:5000/feedget')
+//       .then((response) => {
+//         setPosts(response.data);
+//       })
+//       .catch((error) => {
+//         console.error('Error fetching posts:', error);
+//       });
+//   }, []);
+
 //   const handlePostSubmit = (content) => {
-//     setPosts((prevPosts) => [...prevPosts, content]);
+//     const postData = {
+//       description: content,
+//       user_id: sessionStorage.getItem('userId'),
+//     };
+
+//     // Create the new post
+//     axios
+//       .post('http://localhost:5000/feedpost', postData)
+//       .then((response) => {
+//         console.log('Post created:', response.data);
+//         // Fetch the updated posts after creating the new post
+//         axios
+//           .get('http://localhost:5000/feedget')
+//           .then((response) => {
+//             setPosts(response.data);
+//           })
+//           .catch((error) => {
+//             console.error('Error fetching posts:', error);
+//           });
+//       })
+//       .catch((error) => {
+//         console.error('Error creating post:', error);
+//       });
 //   };
 
 //   return (
-//     <div className="container mx-auto mt-8">
-//       <h1 className="text-2xl font-bold mb-4">My Life Posts</h1>
-//       <PostForm onSubmit={handlePostSubmit} />
-//       <PostList posts={posts} />
+//     <div className="container   mx-auto mt-8">
+//       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+//         <div>
+//           <h1 className="text-2xl font-bold mb-4 text-blue-500">My Life Posts</h1>
+//           <PostList posts={posts} />
+//         </div>
+//         <div>
+//           <ProfileInfo />
+//           <PostForm onSubmit={handlePostSubmit} />
+//         </div>
+//       </div>
 //     </div>
 //   );
 // };
 
 // export default HomePage;
 
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import io from 'socket.io-client';
 
 const PostForm = ({ onSubmit }) => {
   const [content, setContent] = useState('');
@@ -78,7 +183,7 @@ const PostForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="mb-4">
+    <div className="mb-4   mr-8">
       <textarea
         className="w-full px-3 py-2 border rounded-md resize-none"
         rows={4}
@@ -97,26 +202,32 @@ const PostForm = ({ onSubmit }) => {
   );
 };
 
-const ProfileInfo = () => {
+const ProfileInfo = ({ user }) => {
+  if (!user) {
+    return <div>Loading profile information...</div>;
+  }
+
   return (
-    <div className="bg-white p-4 mb-4 rounded-md">
-      <h2 className="text-xl font-semibold mb-2">Profile</h2>
-      <p>Name: John Doe</p>
-      <p>Email: johndoe@example.com</p>
-      <p>Date of Birth: 01/01/1990</p>
+    <div>
+      <div className="bg-blue-950  p-10 mr-8 mb-4 rounded-3xl" key={user.id}>
+        <h2 className="text-4xl text-white font-semibold mb-4">Profile</h2>
+        <p className="text-gray-400 text-2xl">
+          {user.firstName} {user.lastName}
+        </p>
+        <p className="text-gray-400 text-2xl">{user.email}</p>
+      </div>
     </div>
   );
 };
 
 const PostList = ({ posts }) => {
+  const reversedPosts = [...posts].reverse();
+
   return (
     <div>
-      {posts.map((post, index) => (
-        <div
-          key={index}
-          className="p-4 mb-4 border rounded-md"
-        >
-          <p className="mb-2">{post}</p>
+      {reversedPosts.map((post) => (
+        <div key={post.id} className="p-4 mb-4 border rounded-md">
+          <p className="mb-2">{post.description}</p>
           <hr className="my-2" />
         </div>
       ))}
@@ -126,20 +237,79 @@ const PostList = ({ posts }) => {
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
+  const [user, setUser] = useState(null);
+  const [socket, setSocket] = useState(null);
+
+  useEffect(() => {
+    // Fetch posts data from the backend
+    axios
+      .get('http://localhost:5000/feedget')
+      .then((response) => {
+        setPosts(response.data);
+      })
+      .catch((error) => {
+        console.error('Error fetching posts:', error);
+      });
+
+    // Set up Socket.io connection
+    const newSocket = io('http://localhost:5000');
+    setSocket(newSocket);
+
+    // Fetch user data from the backend
+    axios
+      .get('http://localhost:5000/login')
+      .then((response) => {
+        const userId = Number(sessionStorage.getItem('userId'));
+        const user = response.data.find((item) => item.id === userId);
+        setUser(user);
+      })
+      .catch((error) => {
+        console.error('Error fetching user data:', error);
+      });
+
+    // Clean up the socket connection and event listeners on component unmount
+    return () => {
+      if (socket) {
+        socket.disconnect();
+      }
+    };
+  }, [socket]);
 
   const handlePostSubmit = (content) => {
-    setPosts((prevPosts) => [...prevPosts, content]);
+    const postData = {
+      description: content,
+      user_id: sessionStorage.getItem('userId'),
+    };
+
+    // Create the new post
+    axios
+      .post('http://localhost:5000/feedpost', postData)
+      .then((response) => {
+        console.log('Post created:', response.data);
+        // Fetch the updated posts after creating the new post
+        axios
+          .get('http://localhost:5000/feedget')
+          .then((response) => {
+            setPosts(response.data);
+          })
+          .catch((error) => {
+            console.error('Error fetching posts:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Error creating post:', error);
+      });
   };
 
   return (
     <div className="container mx-auto mt-8">
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <div>
-          <h1 className="text-2xl font-bold mb-4">My Life Posts</h1>
+          <h1 className="text-2xl font-bold mb-4 text-blue-500">My Life Posts</h1>
           <PostList posts={posts} />
         </div>
         <div>
-          <ProfileInfo />
+          <ProfileInfo user={user} />
           <PostForm onSubmit={handlePostSubmit} />
         </div>
       </div>

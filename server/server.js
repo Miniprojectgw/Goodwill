@@ -3,6 +3,8 @@ const router = express.Router();
 const app = express();
 const registerUser = require('../server/register');
 const sponReg = require('../server/sponreg');
+const Feedpost = require('../server/feedpost');
+const Feedget = require('../server/feedget')
 const loginuser = require('../server/login');
 const spon =require('../server/spon');
 const PORT = 5000;
@@ -16,9 +18,11 @@ app.get('/register', (req, res) => {
   res.send('Server is working!'); 
 });
 app.post('/register', registerUser);
-app.post('/sponreg', sponReg )
+app.post('/sponreg', sponReg );
+app.post('/feedpost', Feedpost )
 app.get('/login', loginuser);
 app.get('/spondata',spon);
+app.get('/feedget',Feedget);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

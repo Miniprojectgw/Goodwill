@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route ,Routes } from 'react-router-dom';
-import Login from './Pages/Register';
+import Register from './Pages/Register';
 import Landing from './Pages/Landing';
 import Login1 from './Pages/Login1';
 import Splogin from './Pages/Splogin';
@@ -12,6 +12,8 @@ import './App.css';
 import Sponal from './Pages/Sponal';
 import Nav3 from './Components/Nav3';
 import Feed from './Pages/Feed';
+import Register2 from './Pages/Register2';
+import Login2 from './Pages/Login2';
 
 
 function App() {
@@ -24,16 +26,16 @@ function App() {
           {/* <Route path="/Login1" Component={Login1}/>
           <Route path="/Splogin" Component={Splogin}/> */}
           <Route path="/login/role/student" element={<Login1/>} />
-          <Route path="/login/role/alumni" element={<Login1/>} />
-          <Route path="/signup/role/student" element={<Login/>} />
-          <Route path="/signup/role/alumni" element={<Login/>} />
+          <Route path="/login/role/alumni" element={<Login2/>} />
+          <Route path="/signup/role/student" element={<Register/>} />
+          <Route path="/signup/role/alumni" element={<Register2/>} />
           <Route path="/login/role" element={<Role/>} />
           <Route path="/signup/role" element={<Role/>} />
 
           <Route path="/Studhome" Component={Nav2}>
           <Route path="/Studhome/sponsorships" Component={Userhome}/>
           <Route path="/Studhome/internships" Component={Sponal}/>
-          <Route path="/Studhome/feed" Component={Userhome}/>  
+          <Route path="/Studhome/feed" Component={Feed}/>  
           </Route>
 
           <Route path="/Alumhome" Component={Nav3}>
