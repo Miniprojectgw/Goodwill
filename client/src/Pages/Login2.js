@@ -23,7 +23,7 @@ function Login2() {
       if (matchingElement && matchingElement.role === 'alumni') {
         sessionStorage.setItem('userId', matchingElement.id);
         console.log('Success');
-        navigate('../Alumhome');
+        navigate('../Alumhome/feed');
       } else {
         console.log('Code does not match');
       }

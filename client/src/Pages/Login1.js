@@ -30,7 +30,7 @@ function Login1() {
            console.log(userId);
 
         console.log('Success');
-        navigate('../Studhome');
+        navigate('../Studhome/feed');
       } else {
         console.log('Invalid credentials or user role');
       }

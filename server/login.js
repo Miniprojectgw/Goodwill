@@ -12,7 +12,7 @@ async function getUsers(req, res) {
         res.status(500).json({ error: 'An internal server error occurred' });
       } else {
         res.status(200).json(results);
-        console.log(results);
+        // console.log(results);
       }
     });
   }

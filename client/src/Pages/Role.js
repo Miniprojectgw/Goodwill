@@ -13,6 +13,7 @@ const Role = () => {
       <div className="flex flex-col items-center">
         <h2 className="text-3xl font-bold mb-4">Select Your Role</h2>
         <div className="flex space-x-4">
+        
           <Link to="student">
           <button
             onClick={() => handleRoleSelect("student")}
