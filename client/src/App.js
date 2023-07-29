@@ -5,6 +5,8 @@ import Landing from './Pages/Landing';
 import Login1 from './Pages/Login1';
 import Splogin from './Pages/Splogin';
 import Userhome from './Pages/Userhome';
+import Intstu from './Pages/Intstu';
+import Intalu from './Pages/Intalu';
 import Studhome from './Pages/Studenthome/Studhome';
 import Nav2 from './Components/Nav2';
 import Role from './Pages/Role';
@@ -34,13 +36,13 @@ function App() {
 
           <Route path="/Studhome" Component={Nav2}>
           <Route path="/Studhome/sponsorships" Component={Userhome}/>
-          <Route path="/Studhome/internships" Component={Sponal}/>
+          <Route path="/Studhome/internships" Component={Intstu}/>
           <Route path="/Studhome/feed" Component={Feed}/>  
           </Route>
 
           <Route path="/Alumhome" Component={Nav3}>
           <Route path="/Alumhome/sponsorships" Component={Sponal}/>
-          <Route path="/Alumhome/internships" Component={Sponal}/>
+          <Route path="/Alumhome/internships" Component={Intalu}/>
           <Route path="/Alumhome/feed" Component={Feed}/>  
           </Route>
 
