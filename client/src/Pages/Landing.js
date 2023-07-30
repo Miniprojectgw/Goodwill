@@ -5,6 +5,7 @@ import About from '../Components/Landing/About';
 import Footer from '../Components/Landing/Footer';
 import Slide from '../Components/Slide';
 import Aboutus from '../Components/Landing/Aboutus';
+import Faq from '../Components/Landing/Faq';
 
 const Landing = () => {
   return (
@@ -17,7 +18,9 @@ const Landing = () => {
       
       <Hero/> 
       <About/>
+      <Faq/>
      <Footer/>
+     
      </div>
     
   )
