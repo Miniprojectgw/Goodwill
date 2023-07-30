@@ -145,7 +145,7 @@ function sponReg(req, res) {
   const bank_account_name =req.body.bank_account_name;
   const account_number =req.body.account_number;
   const bank_address =req.body.bank_address;
-
+  const user_id= req.body.user_id;
   
 
   const data1 = {
@@ -158,6 +158,7 @@ function sponReg(req, res) {
     mother_name,
     mother_mobile,
     mother_occupation,
+    user_id,
   };
 
   const data2 = {
@@ -168,6 +169,7 @@ function sponReg(req, res) {
     num_rooms,
     course,
     profile_picture: null,
+    user_id,
   };
 
   const data3 = {
@@ -178,6 +180,7 @@ function sponReg(req, res) {
     bank_account_name,
     account_number,
     bank_address,
+    user_id,
   };
 
   // Add the rest of your data initialization here...
