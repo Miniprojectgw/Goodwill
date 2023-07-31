@@ -54,13 +54,13 @@ const Nav2 = () => {
         <nav className="bg-white py-4 px-6 flex items-center justify-between w-full">
           <ul className="flex justify-between items-center text-black w-full">
             <li className="hover:text-blue-200 cursor-pointer" onClick={handleClick}>
-              <Link to="/Studhome/feed">Feed</Link>
+              <Link to="/Alumhome/feed">Feed</Link>
             </li>
             <li className="hover:text-blue-200 cursor-pointer" onClick={handleClick}>
-              <Link to="/Studhome/sponsorships">Sponsorships</Link>
+              <Link to="/Alumhome/sponsorships">Sponsorships</Link>
             </li>
             <li className="hover:text-blue-200 cursor-pointer" onClick={handleClick}>
-              <Link to="/Studhome/internships">Internships</Link>
+              <Link to="/Alumhome/internships">Internships</Link>
             </li>
             <li className="hover:text-blue-200 cursor-pointer" onClick={handleClick}>
               <Link to="/chat">Chat</Link>
