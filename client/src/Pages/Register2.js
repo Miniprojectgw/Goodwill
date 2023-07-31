@@ -77,7 +77,7 @@ const Register2 = () => {
       <div className="md:w-1/2 px-8 md:px-16 items-center">
 
 
-        <h2 className=" text-center font-bold p-5 text-4xl text-white  ">Register</h2>  <center><img  src="alumni.jpg"  alt="" className=""></img></center>
+        <h2 className=" text-center font-bold p-5 text-4xl text-white  ">Register</h2>  <center><img class="h-16 max-w-full rounded-lg" src="alumni.jpg"  alt="" className=""></img></center>
         <p className="text-1xl mt-4 text-center text-white">If you are already a member, easily Login!
         </p>
 

@@ -12,7 +12,7 @@ const About = () => {
     <div className=' flex  items-center bg-gradient-to-r from-yellow-400  to-yellow-600  '>
         
       {posts &&  posts.map((post)=> (
-      <div className="py-10 px-16   justify-center flex-rows  " >
+      <div className="py-10 px-16   justify-center flex-rows" id="card" >
        <Card1 title={post.title}
        des={post.des}/>
        </div>

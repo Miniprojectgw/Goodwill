@@ -20,7 +20,7 @@ const faqData = [
 
 function App() {
   return (
-    <div className="bg-gradient-to-r from-yellow-400  to-yellow-600 min-h-screen">
+    <div className="bg-gradient-to-r from-yellow-400  to-yellow-600 min-h-screen" id="faq">
       <main className="p-20  max-w-2xl mx-auto">
         <h1 className="text-4xl font-Italics font-bold text-white text-center mt-20 mb-12">Frequently Asked Questions</h1>
         {faqData.map((item, index) => (
