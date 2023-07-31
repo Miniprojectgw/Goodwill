@@ -202,10 +202,7 @@
 
 
 
-
-
-
-import React, { useState, useEffect } from 'react';
+import React, { useState , useEffect } from 'react';
 import axios from 'axios';
 
 const InternshipForm = ({ onSubmit }) => {
@@ -222,6 +219,7 @@ const InternshipForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const internshipData = {
       name,
       email,
@@ -236,8 +234,18 @@ const InternshipForm = ({ onSubmit }) => {
       user_id: sessionStorage.getItem('userId'),
     };
 
-    console.log('Internship data submitted:', internshipData);
-    onSubmit(internshipData);
+    // Make a POST request to the backend with the internshipData
+    axios.post('http://localhost:5000/intal', internshipData)
+      .then((response) => {
+        // Handle success response
+        console.log('Internship data submitted to the backend:', response.data);
+      })
+      .catch((error) => {
+        // Handle error response
+        console.error('Error submitting internship data to the backend:', error);
+      });
+
+    // Clear the form fields after submission
     setName('');
     setEmail('');
     setContactNumber('');
@@ -259,7 +267,6 @@ const InternshipForm = ({ onSubmit }) => {
       updatedFields.push(field);
     }
     setFields(updatedFields);
-   
   };
  
   return (
@@ -340,62 +347,4 @@ const InternshipForm = ({ onSubmit }) => {
     </div>
   );
 };
-
-const InternshipCard = ({ internship }) => {
-  return (
-    <div className="p-4 bg-blue-100 rounded-md shadow-md hover:shadow-xl mb-4">
-      <h3 className="text-lg font-bold mb-2">{internship.companyName}</h3>
-      <p>Company Name: {internship.companyName}</p>
-      <p>Contact Number: {internship.contactNumber}</p>
-      <p>Field: {internship.fields.join(', ')}</p>
-      <p>Skills Required: {internship.skillsRequired}</p>
-    </div>
-  );
-};
-
-const App = () => {
-  const [internshipDetails, setInternshipDetails] = useState([]);
-
-  const handleSubmit = (internshipData) => {
- 
-    setInternshipDetails((prevInternshipDetails) => [...prevInternshipDetails, internshipData]);
-    console.log("Updated internshipDetails:", internshipDetails);
-  };
-
-  useEffect(() => {
-    if (internshipDetails.length === 0) {
-      // No need to make the request if there are no internship details to submit
-      return;
-    }
-
-    // Assuming the backend server is running on port 5000, adjust the URL as needed
-    const backendURL = 'http://localhost:5000/intal';
-
-    // Send the entire internshipDetails array to the backend
-    axios
-      .post(backendURL, { internships: internshipDetails })
-      .then((response) => {
-        // Handle successful response if needed
-        console.log('Internship data submitted to the backend:', response.data);
-      })
-      .catch((error) => {
-        // Handle error if needed
-        console.error('Error submitting internship data to the backend:', error);
-      });
-  }, [internshipDetails]);
-
-  return (
-    <div className="flex">
-      <div className="w-1/2 overflow-auto">
-        {internshipDetails.map((internship, index) => (
-          <InternshipCard key={index} internship={internship} />
-        ))}
-      </div>
-      <div className="w-1/2">
-        <InternshipForm onSubmit={handleSubmit} />
-      </div>
-    </div>
-  );
-};
-
-export default App;
+export default InternshipForm;

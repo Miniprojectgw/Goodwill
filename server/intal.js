@@ -62,16 +62,16 @@ function intAlu(req, res) {
   db.query('INSERT INTO intal1 SET ?', intal1, (error, result1) => {
     if (error) {
       console.error('Error occurred while inserting user:', error);
-      return res.status(500).json({ error: 'An internal server error occurred' });
+      res.status(500).json({ error: 'An internal server error occurred' });
     } else {
       db.query('INSERT INTO intal2 SET ?', intal2, (error, result2) => {
         if (error) {
           console.error('Error occurred while inserting user:', error);
-          return res.status(500).json({ error: 'An internal server error occurred' });
+          res.status(500).json({ error: 'An internal server error occurred' });
         } 
             else {
                 console.log('User inserted successfully');
-               return res.status(200).json({ message: 'User registered successfully' });
+               res.status(200).json({ message: 'User registered successfully' });
               }
        
       });
