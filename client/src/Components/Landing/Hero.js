@@ -28,7 +28,7 @@ const AnimatedText = () => {
       New to<span className='text-yellow-400'> G<span className='text-black'>oodWilL?</span></span> 
       </h1>
       <p className="text-white mt-4 text-lg block duration-700 delay-150 relative  transform transition-all opacity-0 translate-y-12 ease-out" data-replace='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100" }'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptas eius explicabo suscipit, nemo sapiente dignissimos, ipsum illum minus ab itaque accusamus reprehenderit. Quis fuga iusto saepe nobis sunt a. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio ut nulla quos nemo nesciunt enim officiis laudantium, neque labore. Officia illo obcaecati, impedit distinctio dicta laudantium mollitia quam nihil quisquam!
+      A platform that bridges the gap between aspiring students and caring alumni!Our platform offers a unique opportunity for students to pursue their dreams by connecting with generous alumni sponsors.Together, we build a tightly-knit community of learning and compassion, where students are empowered to realize their potential, and alumni proudly act as pillars of support. 
       </p>
     </>
 
@@ -83,7 +83,7 @@ const AnimatedText3 = () => {
       Internships
       </h1>
       <p className="text-white mt-6 text-lg block duration-700 delay-150 relative  transform transition-all opacity-0 translate-y-12 ease-out" data-replace='{ "translate-y-12": "translate-y-0", "opacity-0": "opacity-100" }'>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptas eius explicabo suscipit, nemo sapiente dignissimos, ipsum illum minus ab itaque accusamus reprehenderit. Quis fuga iusto saepe nobis sunt a. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio ut nulla quos nemo nesciunt enim officiis laudantium, neque labore. Officia illo obcaecati, impedit distinctio dicta laudantium mollitia quam nihil quisquam!
+      Our platform offers a cutting-edge internship searching feature designed to help students find valuable and career-boosting internship opportunities. With our user-friendly interface, students can easily explore a diverse range of internship listings from reputed companies and organizations. Our search feature allows students to discover internships that align perfectly with their career aspirations, ensuring they gain relevant skills and exposure in their chosen fields.
       </p>
     </>
 

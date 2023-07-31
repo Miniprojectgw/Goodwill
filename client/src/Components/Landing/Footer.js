@@ -2,7 +2,7 @@ import React from 'react';
 import Logo from '../../Images/GoodwilL.png'
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-blue-700 to-gray-800 text-white">
+    <footer className="bg-gradient-to-r from-blue-700 to-gray-800 text-white" id="Footer">
       <div className="px-12 mx-auto py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
@@ -29,9 +29,9 @@ Alumni making a difference, transforming lives</p>
             <h3 className="text-lg font-bold mb-4">Links</h3>
             <ul>
               <li><a href="" className="text-gray-300 hover:text-white">Home</a></li>
-              <li><a href="" className="text-gray-300 hover:text-white">Contact</a></li>
-              <li><a href="" className="text-gray-300 hover:text-white">About Us</a></li>
+              <li><a href="" className="text-gray-300 hover:text-white">Explore</a></li>
               <li><a href="" className="text-gray-300 hover:text-white">Features</a></li>
+              <li><a href="" className="text-gray-300 hover:text-white">FAQ</a></li>
               <li><a href="" className="text-gray-300 hover:text-white">Reviews</a></li>
             </ul>
           </div>

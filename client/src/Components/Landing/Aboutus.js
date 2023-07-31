@@ -38,7 +38,7 @@ const Aboutus = () =>{
               </a>
 
               <a
-                href="#"
+                href="#Footer"
                 className="block w-full rounded bg-white hover:bg-blue-900 hover:text-white px-12 py-3 text-sm font-medium text-blue-800 shadow  focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
               >
                 Need any help?

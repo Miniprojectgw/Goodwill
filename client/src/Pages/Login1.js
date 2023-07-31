@@ -51,7 +51,8 @@ function Login1() {
     <div>
       <div className='grid grid-cols-2'>
         <div className='px-40 h-screen py-40 shadow-lg bg-gray-600 '>
-          <h1 className='text-5xl mb-6 text-white block text-center font-semibold'>Login</h1>
+          <h1 className="text-5xl mb-6 text-white block text-center font-semibold" style={{ fontFamily: 'Times New Roman, cursive' }}
+  Login>Login</h1>
           <hr className='mt-3'></hr>
           <div className='mt-5 '>
             <label htmlFor='email' className='block text-2xl text-white mb-2'>
@@ -88,7 +89,7 @@ function Login1() {
               <label className='text-1xl'>Remember Me</label>
             </div>
             <div>
-              <a href='a' className='text-indigo-800 font-semibold'>
+              <a href='a' className='text-black-800 font-semibold'>
                 Forgot Password?
               </a>
             </div>
@@ -110,5 +111,6 @@ function Login1() {
     </div>
   );
 }
+
 
 export default Login1;

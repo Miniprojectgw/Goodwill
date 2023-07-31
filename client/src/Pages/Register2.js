@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios';
-import Image from '../Images/image 1.png'
-import { useNavigate } from 'react-router-dom';
+import Image from '../Images/alumni.jpg'
+import { useNavigate , Link} from 'react-router-dom';
+
 const Register2 = () => {
 
 
@@ -76,9 +77,8 @@ const Register2 = () => {
       <div className="md:w-1/2 px-8 md:px-16 items-center">
 
 
-        <h2 className=" text-center font-bold p-5 text-4xl text-white  ">Register with</h2>  <center><img  src="Goodwill.png"  alt="" className=""></img></center>
-        <p className="text-1xl mt-4 text-center text-white">If you are already a member,
-          easily Register
+        <h2 className=" text-center font-bold p-5 text-4xl text-white  ">Register</h2>  <center><img  src="alumni.jpg"  alt="" className=""></img></center>
+        <p className="text-1xl mt-4 text-center text-white">If you are already a member, easily Login!
         </p>
 
         <form action="" className="flex flex-col gap-4">
@@ -105,8 +105,12 @@ const Register2 = () => {
 
         <div className="mt-3 text-sm flex justify-between items-center ">
           <p className="text-white">Already have an account?</p>
+          
+        <Link to="../../../login/role/alumni">
           <button   className="py-2 px-5  bg-white border rounded-xl hover:scale-105 duration-300">Log in</button>
+          </Link>
         </div>
+
 
       </div>
 
@@ -119,8 +123,8 @@ const Register2 = () => {
       
     
 
-        <div className="sm:block hidden w-1/2 align-middle"></div>
-        <img className="rounded-xl w-full" src={Image} alt=''></img>
+        <div className="sm:block hidden  w-1/2 align-middle"></div>
+        <img className="rounded-xl h-1/2 w-1/2" src={Image} alt=''></img>
       </div>
         
         </section>
