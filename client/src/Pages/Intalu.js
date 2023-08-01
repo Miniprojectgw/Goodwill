@@ -204,6 +204,7 @@
 
 import React, { useState , useEffect } from 'react';
 import axios from 'axios';
+import InternshipListing from '../Components/Intlisting';
 
 const InternshipForm = ({ onSubmit }) => {
   const [name, setName] = useState('');
@@ -270,7 +271,8 @@ const InternshipForm = ({ onSubmit }) => {
   };
  
   return (
-    <div className="p-4 bg-gray-200 overflow-auto h-full">
+    <div className='flex '>
+    <div className="p-4 w-1/2 bg-gray-200 overflow-auto h-full">
       <h2 className="text-2xl font-bold mb-4 text-center text-blue-900">Post your internships here!!</h2>
       <form onSubmit={handleSubmit} className="flex flex-col">
         <div className="mb-4">
@@ -344,6 +346,11 @@ const InternshipForm = ({ onSubmit }) => {
         </div>
         <button onClick={handleSubmit}  className="bg-blue-500 text-white py-2 px-4 rounded self-center">Submit</button>
       </form>
+    </div>
+
+    <div className='p-4 w-1/2 bg-white overflow-auto h-full'>
+      <InternshipListing/>
+    </div>
     </div>
   );
 };

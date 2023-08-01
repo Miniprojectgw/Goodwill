@@ -67,7 +67,7 @@ const Userhome = () => {
 
   return (
     <div className="max-w-7xl mx-auto p-8 bg-white mt-9 rounded-lg shadow-lg">
-      <h1 className="text-4xl font-bold text-blue-700 text-center mb-6">Scholarship Registration Form</h1>
+      <h1 className="text-4xl  font-bold text-blue-700 text-center mb-12">Sponsorship Registration Form</h1>
 
       {!submitted ? (
         <form onSubmit={handleSubmit}>
