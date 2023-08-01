@@ -62,9 +62,7 @@ const Nav2 = () => {
             <li className="hover:text-blue-200 cursor-pointer" onClick={handleClick}>
               <Link to="/Alumhome/internships">Internships</Link>
             </li>
-            <li className="hover:text-blue-200 cursor-pointer" onClick={handleClick}>
-              <Link to="/chat">Chat</Link>
-            </li>
+           
             <li className="hover:text-blue-200 cursor-pointer" onClick={handleLogout}>
               <Link to="../../../">
                 <button className="list-none bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-6 py-2 text-center text-white mr-3 md:mr-6 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-600">Logout</button>

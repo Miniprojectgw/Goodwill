@@ -31,7 +31,7 @@ Alumni making a difference, transforming lives</p>
               <li><a href="#" className="text-gray-300 hover:text-white">Home</a></li>
               <li><a href="#new" className="text-gray-300 hover:text-white">Explore</a></li>
               <li><a href="#card" className="text-gray-300 hover:text-white">Features</a></li>
-              <li><a href="faq" className="text-gray-300 hover:text-white">FAQ</a></li>
+              <li><a href="#faq" className="text-gray-300 hover:text-white">FAQ</a></li>
               
             </ul>
           </div>
