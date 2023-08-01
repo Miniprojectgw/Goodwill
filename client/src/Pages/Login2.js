@@ -77,15 +77,14 @@ function Login2() {
         </div>
        </div>
        <div className='  px-12 '> 
-       <div class="w-1/2 mx-auto p-8">
-  <img src={Logi} class="mx-full w-96 h-96 object-cover rounded" alt="Logo" />
+       <img  src={Logi}/>
 </div>
 
 
     </div>
     
     </div>
-    </div>
+
 
   )
 }
