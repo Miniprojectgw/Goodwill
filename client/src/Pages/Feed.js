@@ -226,7 +226,7 @@ const PostList = ({ posts }) => {
   return (
     <div>
       {reversedPosts.map((post) => (
-        <div key={post.id} className="p-4 mb-4 border rounded-md">
+        <div key={post.id} className="p-2 mb-4 border rounded-md">
           <p className="mb-2">{post.description}</p>
           <hr className="my-2" />
         </div>
@@ -302,10 +302,13 @@ const HomePage = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8">
+    
+    <div className="container mx-auto mt-8 p-10">
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
         <div>
-          <h1 className="text-2xl font-bold mb-4 text-blue-500">My Life Posts</h1>
+          <h1 className="text-2xl font-bold mb-4 text-blue-500">Posts</h1>
+          <br />
+
           <PostList posts={posts} />
         </div>
         <div>
@@ -316,6 +319,14 @@ const HomePage = () => {
     </div>
   );
 };
+
+
+
+  
+
+
+
+
 
 export default HomePage;
 
