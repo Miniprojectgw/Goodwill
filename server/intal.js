@@ -18,22 +18,11 @@ function intAlu(req, res) {
   const skillsRequired=req.body.skillsRequired;
   const timeAndSchedule=req.body.timeAndSchedule;
   const benefits=req.body.benefits;
-  
+  const internp=req.body.internp;
   const user_id= req.body.user_id;
   
 
-  console.log('Received Internship Data:');
-  console.log('Name:', name);
-  console.log('Email:', email);
-  console.log('Contact Number:', contactNumber);
-  console.log('Company Name:', companyName);
-  console.log('Company Address:', companyAddress);
-  console.log('Position:', position);
-  console.log('Fields:', fields);
-  console.log('Skills Required:', skillsRequired);
-  console.log('Time and Schedule:', timeAndSchedule);
-  console.log('Benefits:', benefits);
-  console.log('User ID:', user_id);
+  
 
   const intal1 = {
     
@@ -43,6 +32,7 @@ function intAlu(req, res) {
     companyName,
     companyAddress, 
     user_id,
+    internp,
   };
 
   const intal2 = {
@@ -52,6 +42,7 @@ function intAlu(req, res) {
     timeAndSchedule,
     benefits,
     user_id,
+    internp,
   };
 
   

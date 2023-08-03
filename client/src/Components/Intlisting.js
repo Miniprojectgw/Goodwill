@@ -73,7 +73,7 @@ const InternshipListing = () => {
           <h3 className="text-lg font-bold mb-2">{internship.Name}</h3>
           <p>Company Name: {internship.companyName}</p>
           <p>Contact Number: {internship.contactNumber}</p>
-          <p>Skills Required: {internship.companyAddress}</p>
+          <p>Company Address: {internship.companyAddress}</p>
           <button
             onClick={() => handleDeleteInternship(internship.internship_id)}
             className="bg-red-500 text-white rounded px-2 py-1 mt-2 hover:bg-red-600"

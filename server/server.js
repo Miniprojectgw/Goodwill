@@ -55,7 +55,7 @@ app.get('/register', (req, res) => {
   res.send('Server is working!');
 });
 app.post('/register', registerUser);
-app.post('/sponreg', sponReg);
+app.post('/sponreg', sponReg);   // update
 app.post('/intal', intAlu);
 app.post('/feedpost', Feedpost);
 app.get('/login', loginuser);
@@ -64,7 +64,8 @@ app.get('/intsp', intsp);
 app.get('/feedget', Feedget);
 
 // Use the delete route for handling the DELETE request
-app.use('/delete', delRow);
+
+app.use('/delete', delRow);   //delete
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

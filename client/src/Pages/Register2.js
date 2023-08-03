@@ -51,7 +51,7 @@ const Register2 = () => {
         console.log("User creds created:", response.data);
         
        
-         navigate('/Login/role/student');
+         navigate('/Login/role/alumni');
      
       })
       .catch((error) => {

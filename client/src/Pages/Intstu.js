@@ -90,10 +90,14 @@ const CompanyDetails = ({ selectedCompany }) => {
   return (
     <div className="flex-grow p-4">
       <h2 className="text-2xl font-semibold mb-4">{selectedCompany.name}</h2>
-      <p className="mb-4">{selectedCompany.email}</p>
-      <p className="mb-4">{selectedCompany.companyName}</p>
-      <p className="mb-4">{selectedCompany.benefits}</p>
-      <p className="mb-4">{selectedCompany.fields}</p>
+      <p className="mb-4">Mail: {selectedCompany.email}</p>
+      <p className="mb-4">Company Name: {selectedCompany.companyName}</p>
+      <p className="mb-4">Contact Number: {selectedCompany.contactNumber}</p>
+      <p className="mb-4">Company Address: {selectedCompany.companyAddress}</p>
+      <p className="mb-4">Skills required: {selectedCompany.skillRequired}</p>
+      <p className="mb-4">Time and Schedule: {selectedCompany.timeAndSchedule}</p>
+      <p className="mb-4">Fields required: {selectedCompany.fields}</p>
+      <p className="mb-4">Benefits: {selectedCompany.benefits}</p>
       <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
         Apply for Internship
       </button>
